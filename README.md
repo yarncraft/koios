@@ -8,12 +8,12 @@
 
 ### Quickstart
 
-Following the guidelines of the Twelve Factor App (https://12factor.net/), environment variables are kept in a dotenv file at the root directory.
+Following the guidelines of the Twelve Factor App (https://12factor.net/), environment variables are kept in a dotenv file at the root directory. When using Docker, the environment (such as the API_SECRET) is configured in the Docker Compose file. Note that the final image size of **the Docker image is only 8.52MB in size** thanks to a multi-staged build and UPX stripping.
 
 ````zsh
-docker run -d -p 6379:6379 --name recommender redis
-
-go run server/*.go
+docker build -t koios .
+docker tag koios:latest koios:staging
+docker-compose up
 
 curl -H "Authorization: Bearer API_SECRET" "http://localhost:1323/api/rate?user=u1&item=i1&rating=0.88"
 ````
