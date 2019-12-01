@@ -1,0 +1,29 @@
+version: '3'
+services:
+  koios:
+    image: koios:staging
+    environment:
+      - API_SECRET=test123
+      - REDIS_URL=redis://redis:6379
+    ports:
+      - 1323:1323
+    networks:
+      - redis-net
+    depends_on:
+      - redis
+  redis:
+    image: redis:latest
+    command: ["redis-server", "--appendonly", "yes"]
+    hostname: redis
+    ports:
+      - '6379:6379'
+    networks:
+      - redis-net
+    volumes:
+      - redis-data:/data
+
+networks:
+  redis-net:
+
+volumes:
+  redis-data:
