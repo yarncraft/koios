@@ -1,10 +1,12 @@
-# koios 🔱
+<div align="center"> <img
+src="https://live.staticflickr.com/8335/8360108363_1fb50122bb_b.jpg" width="200" height="200"></img>
+<h1>Koios</h1>
+</div>
+
 
 ### Incremental recommender engine built with Golang & Redis
 
 > Koios (Coeus) was a Titan god of intelligence and farsight, meaning that, due to his inquisitive mind and desire to learn, he was with gained knowledge and understanding able to see beyond the obvious. He was also identified as a god of wisdom and heavenly oracles.
-
-<img src="https://live.staticflickr.com/8335/8360108363_1fb50122bb_b.jpg" width="300" height="300" align="right"/>
 
 ### Quickstart
 
